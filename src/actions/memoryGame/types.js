@@ -1,0 +1,7 @@
+export const SET_SELECTED = 'SET_SELECTED';
+export const DESELECT_ALL = 'DESELECT_ALL';
+export const RESTART_GAME = 'RESTART_GAME';
+export const WIN_GAME = 'WIN_GAME';
+export const PICK_LETTERS = 'PICK_LETTERS';
+export const SET_MATCHED = 'SET_MATCHED';
+export const TOGGLE_BLOCK_SELECTION = 'TOGGLE_BLOCK_SELECTION';
