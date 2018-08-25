@@ -68,7 +68,7 @@ export default (props) => {
 
   const card = (
     <div>
-      <Card raised onClick={props.matched ? undefined : props.onClick}>
+      <Card className="card" raised onClick={props.matched ? undefined : props.onClick}>
         <Card.Content>
           {props.matched && <p>Matched!</p>}
           <Card.Header>{props.value.toUpperCase()}</Card.Header>

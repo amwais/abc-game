@@ -1,3 +1,21 @@
 .main{
-  background-color: rgb(63, 126, 155);
+  background-color: rgb(37, 174, 238);
+}
+
+.titles-container{
+  margin: 3%;
+  text-align: center;
+}
+
+.card{
+  text-align: center;
+  font-size: 120%;
+  background-color: chocolate;
+}
+
+.cards-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
 }
