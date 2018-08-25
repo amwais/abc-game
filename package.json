@@ -6,6 +6,7 @@
     "lodash": "^4.17.10",
     "react": "^16.4.1",
     "react-audio-player": "^0.10.0",
+    "react-confetti": "^2.3.0",
     "react-dom": "^16.4.1",
     "react-dom-confetti": "^0.0.10",
     "react-redux": "^5.0.7",
