@@ -3,6 +3,7 @@ import Letter from '../Letter';
 import { Card, Button } from 'semantic-ui-react';
 import Confetti from 'react-confetti';
 import _ from 'lodash';
+import '../styles/main.css';
 
 const randomLetters = () => {
 	const abc = [
@@ -34,29 +35,11 @@ const randomLetters = () => {
 		'z'
 	];
 
-	const shuffle = (abc) => {
-		let currentIndex = abc.length,
-			temporaryValue,
-			randomIndex;
-		while (0 !== currentIndex) {
-			// Pick a remaining element...
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex -= 1;
-
-			// And swap it with the current element.
-			temporaryValue = abc[currentIndex];
-			abc[currentIndex] = abc[randomIndex];
-			abc[randomIndex] = temporaryValue;
-		}
-		return abc;
-	};
-
 	let finalArr = [];
-	shuffle(abc).slice(0, 6).map((letter) => {
-		finalArr.push(letter, letter);
-	});
 
-	return shuffle(finalArr);
+	_.shuffle(abc).slice(0, 12).forEach((letter) => finalArr.push(letter, letter));
+
+	return _.shuffle(finalArr);
 };
 
 const isMatch = (selected) => {
@@ -72,6 +55,7 @@ export default class Letters extends Component {
 	componentWillMount() {
 		const letters = randomLetters();
 		this.props.pickLetters(letters);
+		console.log(letters);
 	}
 
 	componentDidUpdate() {
@@ -103,10 +87,10 @@ export default class Letters extends Component {
 				>
 					<Confetti width={window.innerWidth} height={window.innerHeight} />
 				</div>
-				<div className="titles-container">
+				<div className="app-header">
 					<h1>ABC Spiel!</h1>
-					<h3>Matches found: {this.props.matched.length}</h3>
-					<Button icon="repeat" color="pink" onClick={() => this.props.restartGame(randomLetters())} />
+					<h3>Paare gefunden: {this.props.matched.length}</h3>
+					<Button icon="repeat" color="green" onClick={() => this.props.restartGame(randomLetters())} />
 				</div>
 				<Card.Group itemsPerRow={4} className="cards-container" style={style}>
 					{this.props.gameLetters.map((letter, i) => (

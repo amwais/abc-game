@@ -1,3 +1,3 @@
-import Main from './Main'
+import Letters from './Letters';
 
-export default Main;
+export default Letters;

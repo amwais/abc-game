@@ -4,21 +4,15 @@ import {
 	selectChar,
 	deselectAll,
 	restartGame,
-	winGame,
 	pickLetters,
 	setMatched,
 	toggleBlockSelection
 } from '../../../actions/memoryGame/actions';
 
-// Posts.propTypes = {
-
-// };
-
 const mapStateToProps = (state) => ({
 	gameLetters: state.memoryGame.gameLetters,
 	selected: state.memoryGame.selected,
 	matched: state.memoryGame.matched,
-	gameOver: state.memoryGame.gameOver,
 	blockSelection: state.memoryGame.blockSelection
 });
 
